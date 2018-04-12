@@ -1,15 +1,18 @@
-package com.company.springBoot;
+package com.company;
 
-import com.company.springBoot.entity.Product;
+import com.company.controller.DefaultController;
+import com.company.model.Product;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
+//@EnableJpaRepositories("com.company")
 public class Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
-		Product product = new Product();
+		DefaultController defaultController = new DefaultController();
+		defaultController.homePage();
 
 	}
 }

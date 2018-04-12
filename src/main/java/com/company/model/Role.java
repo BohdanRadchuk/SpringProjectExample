@@ -1,4 +1,4 @@
-package com.company.springBoot.entity;
+package com.company.model;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -7,8 +7,8 @@ import java.util.Set;
 import java.util.UUID;
 
 @Entity
-@Table(schema = "springSchema", name = "springData")
-public class Manufacturer {
+@Table(schema = "springdata", name = "roles")
+public class Role {
 
     @Id
     @GeneratedValue(generator = "system-uuid")
@@ -19,7 +19,7 @@ public class Manufacturer {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "price")
-    private Set<Product> products;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "role" , cascade = CascadeType.ALL)
+    private Set<User> users;
 
 }
