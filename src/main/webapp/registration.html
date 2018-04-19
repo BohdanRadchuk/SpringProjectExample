@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<!--xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org"-->
+
+<head>
+    <meta charset="UTF-8">
+
+    <link href="style/mainStyle.css" rel="stylesheet" type="text/css">
+
+    <title>Registration</title>
+</head>
+<body>
+<div class="login-form">
+    <form action="/registration" method="post">
+        <div class="header">
+            <h1>Registration</h1>
+            <span>Enter registration data </span>
+        </div>
+
+        <div class="content">
+            <label>Email<br><input class="input" placeholder="Enter email" type="text" name="email"
+                                    required/></label><br>
+            <label>Password<br><input class="input" placeholder="Enter password" type="password"
+                                      name="password" required/></label><br>
+            <label>Name<br><input class="input" placeholder="Enter name" type="text" name="firstName"
+                                  required/></label><br>
+            <label>Surname<br><input class="input" placeholder="Enter surname" type="text"
+                                      name="lastName" required/></label><br>
+        </div>
+        <div class="footer">
+            <a class="button buttonLeft" href="/login">Cancel</a>
+            <input class="button buttonRight" type="submit" value="Accept"/>
+
+        </div>
+
+
+    </form>
+
+</div>
+</body>
+</html>

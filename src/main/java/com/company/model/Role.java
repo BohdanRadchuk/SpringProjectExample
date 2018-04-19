@@ -11,15 +11,15 @@ import java.util.UUID;
 public class Role {
 
     @Id
-    @GeneratedValue(generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid", strategy = "uuid")
-    @Column(name = "id", unique = true)
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    @Column(name = "id", unique = true, columnDefinition = "BINARY(16)")
     private UUID id;
 
     @Column(name = "name", nullable = false)
     private String name;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "role" , cascade = CascadeType.ALL)
+   /* @ManyToMany(mappedBy = "roles")
     private Set<User> users;
-
+*/
 }

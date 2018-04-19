@@ -11,9 +11,9 @@ import java.util.UUID;
 public class Manufacturer {
 
     @Id
-    @GeneratedValue(generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid", strategy = "uuid")
-    @Column(name = "id", unique = true)
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    @Column(name = "id", unique = true, columnDefinition = "BINARY(16)")
     private UUID id;
 
     @Column(name = "name", nullable = false)
