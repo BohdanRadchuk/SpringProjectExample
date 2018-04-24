@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <link href="style/mainStyle.css" rel="stylesheet" type="text/css">
+    <title>UsersList</title>
+</head>
+<body>
+
+<table class="login-form">
+
+    <th:block th:each="user : ${list}">
+        <tr>
+            <td hidden th:text="${user.id}">...</td>
+            <td th:text="${user.email}">...</td>
+            <td th:text="${user.firstName}">...</td>
+            <td th:text="${user.lastName}">...</td>
+            <td>
+                <form th:action="@{'/userslist/edit'(id=${user.id})}" method="POST">
+                    <div>
+                        <input class="button" type="submit" value="edit"/>
+                    </div>
+                </form>
+
+            </td>
+            <td>
+                <form th:action="@{'/userslist/delete'(id=${user.id})}" method="POST">
+                    <div>
+                        <input class="button" type="submit" value="delete"/>
+                    </div>
+                </form>
+
+            </td>
+
+<!--
+                <div th:with="baseUrl="/edituser?" '/admin/home' : ${user.homeUrl})">
+                    ...
+                    <a th:href="@{${baseUrl}(id=${user.id})}">...</a>
+                    ...
+                </div>
+            <form>-->
+
+
+
+        </tr>
+    </th:block>
+</table>
+
+<p th:text="${list}"></p>
+
+</body>
+</html>

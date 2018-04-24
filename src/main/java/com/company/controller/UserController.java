@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
+
+import java.util.List;
 import java.util.UUID;
 
 @Controller
@@ -62,5 +64,20 @@ public class UserController {
 
 
         return "redirect:login";
+    }
+
+    @GetMapping("/userslist")
+    public String usersInfo (Model model){
+
+        //List users = userService.getAllUsers();
+
+        model.addAttribute("list", userService.getAllUsers());
+
+        return "userslist";
+    }
+
+    @PostMapping("/userlist/edit")
+    public String editUser(Model model){
+        model.containsAttribute()
     }
 }
