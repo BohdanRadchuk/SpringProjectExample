@@ -1,4 +1,6 @@
 package com.company.service;
 
-public class SecurityService {
+public interface SecurityService {
+    String findLoggedInEmail();
+    void autologin(String username, String password);
 }

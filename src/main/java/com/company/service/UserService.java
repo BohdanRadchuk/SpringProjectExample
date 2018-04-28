@@ -4,6 +4,7 @@ import com.company.model.Role;
 import com.company.model.User;
 
 import java.util.List;
+import java.util.Set;
 
 public interface UserService {
     void save(User user);
@@ -14,7 +15,7 @@ public interface UserService {
 
     User findById(String id);
 
-    List<Role> findAllRole();
+    Set<Role> findAllRole(String id);
 
     void deleteUserById(String id);
 }

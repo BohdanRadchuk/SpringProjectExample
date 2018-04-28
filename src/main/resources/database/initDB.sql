@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS springdata.products (
 );
 CREATE TABLE IF NOT EXISTS springdata.roles (
   id BINARY(16) PRIMARY KEY,
-  name VARCHAR(100) NOT NULL
+  role VARCHAR(100) NOT NULL
 );
 CREATE TABLE IF NOT EXISTS springdata.users (
   id BINARY(16) PRIMARY KEY ,

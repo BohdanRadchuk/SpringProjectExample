@@ -17,16 +17,21 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
             <td th:text="${user.firstName}">...</td>
             <td th:text="${user.lastName}">...</td>
             <td>
-                <form th:action="@{'/userslist/edit'(id=${user.id})}" method="POST">
+                <form th:action="@{'/edit/userslist'}" method="POST">
                     <div>
+                        <input type="hidden" name="editbool" th:value="true">
+                        <input type="hidden" name="id" th:value="${user.id}">
+
                         <input class="button" type="submit" value="edit"/>
                     </div>
                 </form>
 
             </td>
             <td>
-                <form th:action="@{'/userslist/delete'(id=${user.id})}" method="POST">
+                <form th:action="@{'/userslist/delete'}" method="POST">
                     <div>
+
+                        <input type="hidden" name="id" th:value="${user.id}">
                         <input class="button" type="submit" value="delete"/>
                     </div>
                 </form>

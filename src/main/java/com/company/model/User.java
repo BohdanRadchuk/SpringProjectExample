@@ -29,10 +29,10 @@ public class User {
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
- /*   @ManyToMany
+    @ManyToMany
     @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "id_user"),
             inverseJoinColumns = @JoinColumn(name = "id_role"))
-    private Set<Role> roles;*/
+    private Set<Role> roles;
 
     public UUID getId() {
         return id;
@@ -74,13 +74,13 @@ public class User {
         this.lastName = lastName;
     }
 
- /*   public Set<Role> getRoles() {
+    public Set<Role> getRoles() {
         return roles;
     }
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
-    }*/
+    }
 
     @Override
     public String toString() {

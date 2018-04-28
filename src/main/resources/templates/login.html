@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+>
 
 
 <head>
     <meta charset="UTF-8">
-    <link href="style/mainStyle.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" th:href="@{/style/mainStyle.css}" />
+   <!-- <link href="style/mainStyle.css" rel="stylesheet" type="text/css">
+    <link href="style/testStyle.css" rel="stylesheet" type="text/css">
     <!-link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <title>Spring login page</title>
+   --> <title>Spring login page</title>
 
 </head>
 <body>
@@ -17,11 +19,11 @@
     Input is incorrect
 </div>
 
-<div th:if="${param.error}">
-    <h3>Неправильный логин или пароль. Это все.</h3>
+<div class="messageblock error" th:if="${param.error}">
+    <h3>Wrong login or password</h3>
 </div>
-<div class="w3-container w3-green" th:if="${param.logout}">
-    <h3>Вы успешно вышли из системы</h3>
+<div class="messageblock accept" th:if="${param.logout}">
+    <h3>You are successfully logged out</h3>
 </div>
 
 <div class="login-form">
